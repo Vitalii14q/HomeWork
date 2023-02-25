@@ -1,12 +1,8 @@
 package GeometricFigure;
 
-public class GeometricFigure {
+public abstract class GeometricFigure {
 
-    public double getSquare () {
-        return 0;
-    }
+    public abstract double getSquare ();
 
-    public double getPerimeter () {
-        return 0;
-    }
+    public abstract double getPerimeter ();
 }

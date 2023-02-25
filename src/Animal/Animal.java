@@ -6,7 +6,7 @@ public class Animal {
         System.out.println("i`m animal");
     }
 
-    public int getbill () {
+    public int getBill () {
         return 10;
     }
 }

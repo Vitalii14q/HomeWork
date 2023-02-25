@@ -10,8 +10,8 @@ public class Dog extends Animal {
         }
 
     @Override
-    public int getbill() {
-            int bill = super.getbill() * 10;
+    public int getBill() {
+            int bill = super.getBill() * 10;
         return bill;
     }
 
