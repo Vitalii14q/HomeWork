@@ -1,18 +1,19 @@
 package Worker;
 
 public abstract class Worker extends Human {
-    private int id;
+    private long id;
     private double salary;
-    private String department;
+    public String department;
 
-    public Worker (int age, String name, int id, double salary, String department) {
+    public Worker (int age, String name, long id, double salary, String department) {
         super();
         this.id = id;
         this.salary = salary;
         this.department = department;
     }
 
-    public int getId () {
+    public long generateId () {
+        id++;
         return id;
     }
 
@@ -24,5 +25,5 @@ public abstract class Worker extends Human {
         return department;
     }
 
-    public abstract double calculatePay ();
+    public abstract double calculatePay();
 }
