@@ -12,10 +12,10 @@ public abstract class Worker extends Human {
         this.department = department;
     }
 
-    public long generateId () {
+    /*public static long generateId () {
         id++;
         return id;
-    }
+    }*/
 
     public double getSalary () {
         return salary;

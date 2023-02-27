@@ -8,8 +8,9 @@ public class PostMan  extends Worker{
         this.volumeOfDeliveredParcels = volumeOfDeliveredParcels;
     }
 
-    public String getDepartment () {
-        return department; // разобраться почему требует публичные поля.
+    @Override
+    public String getDepartment() {
+        return super.getDepartment();
     }
 
     public int getVolumeOfDeliveredParcels () {
@@ -18,11 +19,6 @@ public class PostMan  extends Worker{
 
     @Override
     public double calculatePay() {
-        return getVolumeOfDeliveredParcels() + getSalary();
-    }
-
-    @Override
-    public long generateId() {
-        return super.generateId();
+        return getVolumeOfDeliveredParcels() + getSalary(); // нужен расчет посылка = деньги
     }
 }
