@@ -8,9 +8,8 @@ public class PostMan  extends Worker{
         this.volumeOfDeliveredParcels = volumeOfDeliveredParcels;
     }
 
-    @Override
-    public String getDepartment() {
-        return super.getDepartment();
+    public void setVolumeOfDeliveredParcels(int volumeOfDeliveredParcels) {
+        this.volumeOfDeliveredParcels = volumeOfDeliveredParcels;
     }
 
     public int getVolumeOfDeliveredParcels () {

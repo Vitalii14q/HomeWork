@@ -8,9 +8,8 @@ public class SalesMan extends Worker {
         this.sales = sales;
     }
 
-    @Override
-    public String getDepartment() {
-        return super.getDepartment();
+    public void setSales (int sales) {
+        this.sales = sales;
     }
 
     public int getSales () {

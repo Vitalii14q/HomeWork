@@ -6,6 +6,5 @@ public class GenerateId {
     public long generateId () {
         generateId++;
         return generateId;
-
     }
 }
