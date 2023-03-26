@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            System.out.println(countTheSumOfTwoNumbers(4,4));
+            System.out.println(countTheSumOfTwoNumbers(4,55));
         } catch (Exception e) {
             e.printStackTrace();
         }
