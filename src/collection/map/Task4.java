@@ -1,6 +1,7 @@
 package collection.map;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. В случае с английским алфавитом очки распределяются так:
@@ -16,8 +17,10 @@ import java.util.HashMap;
  */
 
 public class Task4 {
-    public static void main(String[] args) {
-        HashMap<Character, Integer> hashMap = new HashMap<>();
+
+    private static final HashMap<Character, Integer> hashMap = new HashMap<>();
+
+    static {
         hashMap.put('A', 1);
         hashMap.put('E', 1);
         hashMap.put('I', 1);
@@ -43,16 +46,23 @@ public class Task4 {
         hashMap.put('X', 8);
         hashMap.put('Q', 10);
         hashMap.put('Z', 10);
+    }
 
-        String word = "WERWEFPXZ";
+    public static void main(String[] args) {
+        System.out.println(getCost("wERWEFPXZ"));
+    }
+
+    public static int getCost (String word) {
+        String upWord = word.toUpperCase(Locale.ROOT);
         int totalScore = 0;
-        for (int i = 0; i < word.length(); i++) {
-            char letter = word.charAt(i); // берем текущий символ из строки word по индексу i и сохраняем его в переменную letter.
+
+        for (int i = 0; i < upWord.length(); i++) {
+            char letter = upWord.charAt(i); // берем текущий символ из строки word по индексу i и сохраняем его в переменную letter.
             Integer score = hashMap.get(letter); //Здесь мы пытаемся получить из HashMap соответствующее значение для символа letter. Если такое значение есть в HashMap, то мы получим его, если нет, то score будет равен null. Мы используем класс-обертку Integer вместо примитивного типа int, чтобы можно было проверить на равенство null.
             if (score != null) { // Здесь мы проверяем, что значение score не равно null. Если это так, то символ letter присутствует в HashMap, и мы можем добавить очки за него в общую сумму.
                 totalScore += score; //Здесь мы добавляем очки за символ letter к общей сумме очков totalScore. Если символа нет в HashMap, то он будет проигнорирован
             }
         }
-        System.out.println("Стоимость слова " + word + " равна " + totalScore + " очкам.");
+        return totalScore;
     }
 }

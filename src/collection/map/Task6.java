@@ -1,5 +1,7 @@
 package collection.map;
 
+import java.util.*;
+
 /**
  * Найти три самых повторяющихся слова в тексте
  */
