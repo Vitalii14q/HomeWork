@@ -13,7 +13,7 @@ import java.util.Map;
 public class Task5 {
 
     public static void main(String[] args) {
-        System.out.println(findTheMostCommonWord("Привет привет привет идти идти как быть куда и почему привет привет"));
+        System.out.println(findTheMostCommonWord("Привет привет привет идти идти как быть куда и почему привет привет как куда зачем и почему и так привет"));
     }
 
     public static List<Map.Entry<String, Integer>> findTheMostCommonWord (String text) {
