@@ -12,5 +12,8 @@ public class Task12 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+
+        arrayList.remove("Молоко");
+        System.out.println(arrayList);
     }
 }

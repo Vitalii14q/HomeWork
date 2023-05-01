@@ -12,5 +12,8 @@ public class Task20 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+
+        String firstElement = arrayList.get(0);
+        System.out.println("Первый элемент списка: " + firstElement);
     }
 }

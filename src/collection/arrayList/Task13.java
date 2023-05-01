@@ -12,5 +12,16 @@ public class Task13 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+        System.out.println(removeFirst(arrayList));
+        System.out.println(removeLast(arrayList));
+    }
+
+    public static String removeFirst (ArrayList<String> arrayList) {
+        return arrayList.remove(0);
+    }
+
+    public static String removeLast (ArrayList<String> arrayList) {
+
+        return arrayList.remove(arrayList.size() - 1);
     }
 }

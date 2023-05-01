@@ -12,5 +12,10 @@ public class Task19 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+
+        String firstElement = arrayList.remove(0);
+
+        System.out.println("Удаленный первый элемент: " + firstElement);
+        System.out.println("Оставшиеся элементы списка: " + arrayList);
     }
 }

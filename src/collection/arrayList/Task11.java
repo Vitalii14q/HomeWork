@@ -12,5 +12,12 @@ public class Task11 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+        printIndexAndElement(arrayList);
+    }
+
+    public static void printIndexAndElement (ArrayList<String> arrayList) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println("index" + " " + i + " " + arrayList.get(i));
+        }
     }
 }

@@ -12,5 +12,14 @@ public class Task10 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+        System.out.println(getFirst(arrayList) + " " + getLast(arrayList));
+    }
+
+    public static String getFirst (ArrayList<String> arrayList) {
+       return arrayList.get(0);
+    }
+
+    public static String getLast (ArrayList<String> arrayList) {
+        return arrayList.get(arrayList.size() - 1);
     }
 }

@@ -12,5 +12,14 @@ public class Task15 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+
+        swap(arrayList, 0, 2);
+        System.out.println(arrayList);
+    }
+
+    public static void swap(ArrayList<String> arrayList, int indexFirst, int indexSecond) {
+        String buffer = arrayList.get(indexFirst);
+        arrayList.set(indexFirst, arrayList.get(indexSecond));
+        arrayList.set(indexSecond,  buffer);
     }
 }

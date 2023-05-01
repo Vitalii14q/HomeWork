@@ -12,5 +12,10 @@ public class Task25 {
         arrayList.add("Молоко");
         arrayList.add("Хлеб");
         arrayList.add("Вода");
+        if (arrayList.isEmpty()) {
+            System.out.println("Список пуст");
+        } else {
+            System.out.println("Список не пуст");
+        }
     }
 }

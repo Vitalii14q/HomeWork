@@ -9,7 +9,7 @@ import java.util.*;
 public class Task6 {
     public static void main(String[] args) {
         List<Map.Entry<String, Integer>> sortedList = findTheMostCommonWord("Привет привет привет идти идти как быть куда и почему привет привет как куда зачем и почему и так привет как");
-        System.out.println(findTop3RepeatWord(sortedList));
+        System.out.println(findTop3RepeatWord("Привет привет привет идти идти как быть куда и почему привет привет как куда зачем и почему и так привет как"));
         System.out.println(findTheMostCommonWord("Привет привет привет идти идти как быть куда и почему привет привет как куда зачем и почему и так привет как"));
     }
 
@@ -37,11 +37,11 @@ public class Task6 {
         return list;
     }
 
-    public static List<String> findTop3RepeatWord (List <Map.Entry<String, Integer>> sortList) { // Этот метод будет возвращать список из трех самых повторяющихся слов. Ключ это слово, а значение количество повторений.
+    public static List<String> findTop3RepeatWord (String text) { // Этот метод будет возвращать список из трех самых повторяющихся слов. Ключ это слово, а значение количество повторений.
         List<String> top3Words = new ArrayList<>(); // создаем пустой список где будем хранить наши повторяющееся слова.
         int countWord = 0; // создаем счетчик, который будет отслеживать количество найденных слов в списке sortList
-        for (Map.Entry<String, Integer> entry : sortList) { //  Переменная, которая будет использоваться для хранения текущей пары ключ-значение в каждой итерации цикла. sortList коллекция которую не обходимо перебрать.
-            if (countWord == 3 || entry.getValue() == 1) { // проверка условия, если уже найдено 3 наиболее повторяющихся слова или || текущее слово встречается только один раз, то выход из цикла
+        for (Map.Entry<String, Integer> entry : findTheMostCommonWord(text)) { //  Переменная, которая будет использоваться для хранения текущей пары ключ-значение в каждой итерации цикла. sortList коллекция которую не обходимо перебрать.
+            if (countWord == 3) { // проверка условия, если уже найдено 3 наиболее повторяющихся слова или || текущее слово встречается только один раз, то выход из цикла
                 break;
             }
             top3Words.add(entry.getKey()); // добавляем текущее слова ключа в список topWords
