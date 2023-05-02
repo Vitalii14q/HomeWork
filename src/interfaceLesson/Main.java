@@ -1,6 +1,7 @@
 package interfaceLesson;
 
 import java.util.ArrayList;
+import java.util.function.BinaryOperator;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ public class Main {
         ArrayList<Jumper> allJumpers = new ArrayList<>();
         allJumpers.add(dog);
         allJumpers.add(human);
-
+        BinaryOperationMy binaryOperationMy = new BinaryOperationMy();
+        binaryOperationMy.binaryOperation(5, 6, (a, b) -> a + b);
 
     }
 }
