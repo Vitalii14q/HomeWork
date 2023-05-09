@@ -1,7 +1,6 @@
 package interfaceLesson;
 
 import java.util.ArrayList;
-import java.util.function.BinaryOperator;
 
 public class Main {
     public static void main(String[] args) {
