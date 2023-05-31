@@ -7,20 +7,18 @@ import java.util.List;
 public class Order {
     private long orderId;
     private Date dateRegistration;
-    private long numberOrder;
     private Date paymentDate;
     private List<Product> listProducts;
     private double discount;
 
 
-    public Order(Date dateRegistration){ // конструктор
-        this.dateRegistration = dateRegistration;
+    public Order(long orderId){ // конструктор
+        this.dateRegistration = new Date();
         this.listProducts = new ArrayList<>();
-        //orderId++;
+        this.orderId = orderId;
     }
 
     public long getIdOrder() { // тут я что то напутал
-        orderId++;
         return orderId;
     }
 
@@ -32,7 +30,7 @@ public class Order {
         listProducts.remove(product);
     }
 
-    public long calculateTotalPrice() { // метод для расчета общей стоимости
+    public double calculatePrice() { // метод для расчета общей стоимости
         long  totalPrice = 0;
         for (Product product : listProducts) {
             totalPrice += product.getCost();
@@ -40,7 +38,11 @@ public class Order {
         return totalPrice;
     }
 
-    public void applyDiscountToOrder (double discountPercentage) { // метод для применения скидки ко всему заказу
+    public double calculateTotalPrice() {
+        return calculatePrice() * (1 - getDiscount());
+    }
+
+    public void setDiscountToOrder (double discountPercentage) { // метод для применения скидки ко всему заказу
         discount = discountPercentage / 100.0;
     }
 
@@ -48,16 +50,9 @@ public class Order {
         return dateRegistration;
     }
 
-    public void setDateRegistration (Date dateRegistration) {
-        this.dateRegistration = dateRegistration;
-    }
 
-    public long getNumberOrder() {
-        return numberOrder;
-    }
-
-    public void setNumberOrder(long numberOrder) {
-        this.numberOrder = numberOrder;
+    public void setNumberOrder(long orderId) {
+        this.orderId = orderId;
     }
 
     public Date getPaymentDate() {
@@ -72,15 +67,7 @@ public class Order {
         return listProducts;
     }
 
-    public void setListProducts(List<Product> listProducts) {
-        this.listProducts = listProducts;
-    }
-
     public double getDiscount() {
         return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
     }
 }

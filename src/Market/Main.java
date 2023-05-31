@@ -11,7 +11,7 @@ public class Main {
         productManager.task33();
         System.out.println("   ");
         Date dateRegistration = new Date();
-        Order order = new Order(dateRegistration);
+        Order order = new Order(1);
         order.getIdOrder();
 
         Product product = new Product(ProductType.TOY, 500, "Bear"); // создаем объекты заказа
@@ -29,10 +29,9 @@ public class Main {
             System.out.println("- " + product3.getName() + " (" + product3.getCost() + ")");
         }
 
-        System.out.println("Общая стоимость заказа: " + order.calculateTotalPrice());
+        System.out.println("Общая стоимость заказа: " + order.calculatePrice());
 
-        order.applyDiscountToOrder(20.0);
-        System.out.println("Общая стоимость заказа со скидкой: " + order.calculateTotalPrice() * (1 - order.getDiscount()));
+        order.setDiscountToOrder(10.0);
+        System.out.println("Общая стоимость заказа со скидкой: " + order.calculatePrice() * (1 - order.getDiscount()));
     }
-
 }
