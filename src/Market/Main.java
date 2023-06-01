@@ -1,5 +1,6 @@
 package Market;
 
+import java.sql.SQLOutput;
 import java.util.Date;
 
 public class Main {
@@ -33,5 +34,11 @@ public class Main {
 
         order.setDiscountToOrder(10.0);
         System.out.println("Общая стоимость заказа со скидкой: " + order.calculatePrice() * (1 - order.getDiscount()));
+
+        System.out.println();
+        OrderManager orderManager = new OrderManager();
+        orderManager.task61();
+        System.out.println();
+        orderManager.task63();
     }
 }

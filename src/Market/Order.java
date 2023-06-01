@@ -70,4 +70,15 @@ public class Order {
     public double getDiscount() {
         return discount;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", dateRegistration=" + dateRegistration +
+                ", paymentDate=" + paymentDate +
+                ", listProducts=" + listProducts +
+                ", discount=" + discount +
+                '}';
+    }
 }
