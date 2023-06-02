@@ -1,6 +1,5 @@
 package Market;
 
-import java.util.Collection;
 import java.util.Comparator;
 
 public class ComparatorProducts implements Comparator<Product> {
