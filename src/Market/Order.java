@@ -50,6 +50,9 @@ public class Order {
         return dateRegistration;
     }
 
+    public void setDateRegistration (Date date) {
+        this.dateRegistration = date;
+    }
 
     public void setNumberOrder(long orderId) {
         this.orderId = orderId;

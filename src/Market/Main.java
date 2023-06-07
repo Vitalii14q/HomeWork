@@ -10,7 +10,7 @@ public class Main {
         productManager.task32();
         productManager.task33();
         System.out.println("   ");
-        Date dateRegistration = new Date();
+        //Date dateRegistration = new Date();
         Order order = new Order(1);
         order.getIdOrder();
 
@@ -37,7 +37,9 @@ public class Main {
         System.out.println();
         OrderManager orderManager = new OrderManager();
         orderManager.task61();
-        System.out.println();
+        System.out.println("----");
         orderManager.task63();
+        System.out.println("----");
+        orderManager.task62("2023-01-23","2023-01-30");
     }
 }
