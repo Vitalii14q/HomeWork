@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,7 @@ public class OrderManager {
         addOrderDate(order1, "2023-01-24");
 
         Product product1 = new Product(ProductType.TOY, 500, "Bear"); // создаем объекты заказа
-        Product product2 = new Product(ProductType.DISH, 300, "Wine glasses");
+        Product product2 = new Product(ProductType.DISH, 560, "Glass");
         Product product3 = new Product(ProductType.FRUIT, 10, "Banana");
 
         order1.addProduct(product1); // добавляем товары в заказ
@@ -65,31 +66,28 @@ public class OrderManager {
         System.out.println(filterAdd);
     }
 
-    /*public void task62(Date dateStart, Date dateEnd) {
-        List<Order> orders = createListOrders();
-
-        List<Order> filteredOrders = orders.stream()
-                .filter(order -> order.getDateRegistration().after(dateStart) && order.getDateRegistration().before(dateEnd)) //after() определяет была ли первая дата позже второй
-                .collect(Collectors.toList()); //before() определяет была ли первая дата раньше второй. Методы класса Date
-
-        System.out.println(filteredOrders);
-    }*/
-
     public void task62 (String dateStart, String dateEnd) { // searchOrdersByDate
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         List<Order> orders = createListOrders();
+        Date startDate = null;
+        Date endDate = null;
 
         try {
-            Date startDate = dateFormat.parse(dateStart);
-            Date endDate = dateFormat.parse(dateEnd);
+            startDate = dateFormat.parse(dateStart);
+            endDate = dateFormat.parse(dateEnd);
 
-            List<Order> filteredOrders = orders.stream()
-                    .filter(order -> order.getDateRegistration().after(startDate) && order.getDateRegistration().before(endDate)) //after() определяет была ли первая дата позже второй
-                    .collect(Collectors.toList()); //before() определяет была ли первая дата раньше второй. Методы класса Date
-            System.out.println(filteredOrders);
+
         } catch (ParseException error) {
             System.out.println("Invalid date format: " + error.getMessage());
         }
+
+        final Date startDate1 = startDate;
+        final Date endDate1 = endDate;
+        List<Order> filteredOrders = orders.stream()
+                .filter(order -> order.getDateRegistration().after(startDate1) && order.getDateRegistration().before(endDate1)) //after() определяет была ли первая дата позже второй
+                .collect(Collectors.toList()); //before() определяет была ли первая дата раньше второй. Методы класса Date
+        System.out.println(filteredOrders);
+
     }
 
     public void task63 () {
@@ -111,5 +109,19 @@ public class OrderManager {
         } catch (ParseException error) {
             System.out.println("Invalid date format: " + error.getMessage());
         }
+    }
+
+    public void task64 () {
+        HashMap<Product, Integer> countProduct = new HashMap<>();
+        for (Order order : createListOrders()) {
+            for (Product product : order.getListProducts()) {
+                if (countProduct.containsKey(product)){
+                    countProduct.put(product, countProduct.get(product) + 1);
+                } else {
+                    countProduct.put(product, 1);
+                }
+            }
+        }
+        System.out.println(countProduct);
     }
 }
