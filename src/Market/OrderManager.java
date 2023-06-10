@@ -2,10 +2,7 @@ package Market;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class OrderManager {
@@ -122,6 +119,16 @@ public class OrderManager {
                 }
             }
         }
-        System.out.println(countProduct);
+        List<Map.Entry<Product, Integer>> sortedProducts = countProduct.entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                        .limit(3)
+                        .collect(Collectors.toList());
+        System.out.println("Популярные продукты");
+        for (int i = 0; i < sortedProducts.size(); i++) {
+            Map.Entry<Product, Integer> entry = sortedProducts.get(i);
+            Product product = entry.getKey();
+            int count = entry.getValue();
+            System.out.println(product.getName() + " - " + count + " occurrences");
+        }
     }
 }
