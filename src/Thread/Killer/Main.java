@@ -1,4 +1,4 @@
-package Thread;
+package Thread.Killer;
 
 import java.util.ArrayList;
 import java.util.List;

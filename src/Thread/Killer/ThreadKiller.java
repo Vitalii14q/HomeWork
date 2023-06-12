@@ -1,4 +1,4 @@
-package Thread;
+package Thread.Killer;
 
 public class ThreadKiller extends Thread{
     @Override
