@@ -20,6 +20,10 @@ public class Main2 {
         list.add(13);
         list.add(13);
         list.add(13);
+        list.add(13);
+        list.add(13);
+        list.add(1);
+        list.add(15);
 
         Searcher.getMaxElement(list);
     }
