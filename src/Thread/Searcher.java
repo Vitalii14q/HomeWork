@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Searcher {
-    private static final int COUNT_OF_THREADS = 7;
+    private static final int COUNT_OF_THREADS = 256;
 
 
 
@@ -57,5 +57,16 @@ public class Searcher {
         //System.out.println(startIndex + " " + endIndex);
 
         return threads;
+    }
+
+    public static int searchMaxI (List<Integer> list) {
+        int maxElement = 0;
+        for (int i = 1; i < list.size(); i++) {
+            int currentElement = list.get(i);
+            if (currentElement > maxElement) {
+                maxElement = currentElement;
+            }
+        }
+        return maxElement;
     }
 }
