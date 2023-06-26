@@ -16,5 +16,6 @@ public class Main {
         for(int number : arrays) {
             System.out.print(number); //выводим элементы
         }
+
     }
 }

@@ -1,6 +1,6 @@
 package kata;
 
-import ObjectOop.Timer;
+import objectOop.Timer;
 
 public class Check {
     public static void main(String[] args) {

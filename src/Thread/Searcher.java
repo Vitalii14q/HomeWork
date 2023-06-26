@@ -6,8 +6,6 @@ import java.util.List;
 public class Searcher {
     private static final int COUNT_OF_THREADS = 256;
 
-
-
     public static int searchMaxElement(List<Integer> list) {
         List<SearchMaxElementByBordersThread> threads = createThreads(list);
             int maxElement = Integer.MIN_VALUE;
@@ -54,7 +52,6 @@ public class Searcher {
         int endIndex = currentIndex;
         SearchMaxElementByBordersThread searchMaxElementByBordersThread = new SearchMaxElementByBordersThread(list, startIndex, endIndex);
         threads.add(searchMaxElementByBordersThread);
-        //System.out.println(startIndex + " " + endIndex);
 
         return threads;
     }

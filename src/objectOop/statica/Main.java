@@ -1,4 +1,4 @@
-package ObjectOop.statica;
+package objectOop.statica;
 
 public class Main {
     public static void main(String[] args) {

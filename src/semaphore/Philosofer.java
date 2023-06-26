@@ -1,4 +1,4 @@
-package Semaphore;
+package semaphore;
 
 public class Philosofer extends Thread{
     private String name;

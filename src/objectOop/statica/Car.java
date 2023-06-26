@@ -1,4 +1,4 @@
-package ObjectOop.statica;
+package objectOop.statica;
 
 public class Car {
 

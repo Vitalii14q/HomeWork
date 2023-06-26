@@ -1,4 +1,4 @@
-package Semaphore;
+package semaphore;
 
 import java.util.concurrent.Semaphore;
 

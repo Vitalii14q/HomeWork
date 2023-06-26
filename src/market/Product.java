@@ -1,4 +1,4 @@
-package Market;
+package market;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package ObjectOop;
+package objectOop;
 
 public class Ostrich {
 

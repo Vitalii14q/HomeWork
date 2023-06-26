@@ -1,4 +1,4 @@
-package Market;
+package market;
 
 public enum ProductType {
     FOOD_FRESH,
