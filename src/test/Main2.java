@@ -6,14 +6,13 @@ public class Main2 {
         int b = 0;
 
         try {
-            System.out.println(divide(-1,1));
+            System.out.println(divide(1, 0));
         } catch (Exception e) {
             System.out.println("a не может быть нолем");
         }
     }
 
     public static int divide(int a, int b) throws AIsNegativeException {
-
         if (a < 0) {
             throw new AIsNegativeException("a не может быть нолем");
         }
